@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="{{LANG}}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#F5F0E6">
+<title>{{NAME}}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Noto+Serif+Georgian:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F5F0E6; --ink:#161412; --seal:#C8302B;
+  --muted:#6E665C; --line:#DDD4C4;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--paper)}
+body{
+  font-family:'Shippori Mincho','Noto Serif Georgian',Georgia,serif;
+  color:var(--ink);min-height:100vh;display:flex;justify-content:center;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{width:100%;max-width:440px;min-height:100vh;padding:18px 22px 22px;display:flex;flex-direction:column}
+
+/* language switch */
+.langs{display:flex;gap:6px;justify-content:flex-end;margin-bottom:22px}
+.langs a{font-size:11px;letter-spacing:1.5px;padding:4px 9px;color:var(--muted);
+  border:1px solid var(--line);text-decoration:none}
+.langs a.on{background:var(--seal);border-color:var(--seal);color:var(--paper)}
+
+/* logo + header */
+.head{text-align:center}
+.logo{display:block;width:72%;max-width:240px;height:auto;margin:6px auto 10px;mix-blend-mode:multiply}
+.logo-text{font-size:34px;font-weight:700;letter-spacing:8px;margin:10px 0}
+.tagline{font-size:11px;letter-spacing:4px;color:var(--muted);margin:0}
+
+/* ink line with seal */
+.divider{display:flex;align-items:center;gap:10px;margin:22px auto 20px;width:70%}
+.divider::before,.divider::after{content:"";flex:1;height:1px;background:var(--ink);opacity:.25}
+.divider span{width:9px;height:9px;background:var(--seal)}
+
+h1{font-size:21px;font-weight:700;text-align:center;margin:0 0 8px;line-height:1.35}
+.sub{font-size:14px;color:var(--muted);text-align:center;margin:0 0 26px}
+
+/* buttons */
+.btn{display:flex;align-items:center;gap:14px;padding:16px 18px;margin-bottom:12px;
+  border:1.5px solid var(--ink);color:var(--ink);text-decoration:none;
+  font-size:16px;font-weight:700;letter-spacing:.2px;transition:transform .1s}
+.btn:active{transform:scale(.98)}
+.btn.main{background:var(--seal);border-color:var(--seal);color:var(--paper)}
+.ic,.arrow{flex:none;background:currentColor}
+.ic{width:22px;height:22px;-webkit-mask:var(--i) center/contain no-repeat;mask:var(--i) center/contain no-repeat}
+.label{flex:1}
+.arrow{width:16px;height:16px;
+  -webkit-mask:url('https://cdn.jsdelivr.net/npm/@tabler/icons@3/icons/outline/arrow-right.svg') center/contain no-repeat;
+  mask:url('https://cdn.jsdelivr.net/npm/@tabler/icons@3/icons/outline/arrow-right.svg') center/contain no-repeat}
+.gap{height:10px}
+
+/* info */
+.info{display:flex;justify-content:space-between;gap:10px;font-size:12px;color:var(--muted);
+  border-top:1px solid var(--line);padding-top:14px;margin-top:14px}
+footer{margin-top:auto;padding-top:26px;text-align:center;font-size:11px;letter-spacing:1px;color:#9A9184}
+footer b{color:var(--ink)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  {{LANG_PILLS}}
+
+  <div class="head">
+    {{LOGO}}
+    <p class="tagline">ASIAN FUSION · TBILISI</p>
+  </div>
+
+  <div class="divider"><span></span></div>
+
+  <h1>{{WELCOME}}</h1>
+  <p class="sub">{{SUB}}</p>
+
+  {{MAIN_BUTTONS}}
+  <div class="gap"></div>
+  {{OTHER_BUTTONS}}
+
+  <div class="info">
+    <span>Daily 12:00 – 23:00</span>
+    <span>Radisson Blu Iveria · Republic Sq.</span>
+  </div>
+
+  <footer>Powered by <b>Ataris</b></footer>
+</div>
+</body>
+</html>
